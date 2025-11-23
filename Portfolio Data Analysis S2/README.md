@@ -70,7 +70,8 @@
 ## 📸 Aperçu Dashboard
 
 ### Vue d'Ensemble
-![Dashboard Screenshot](Screenshots/dashboard_overview.png)
+![Dashboard Screenshot](Screenshots/dashboard_sql_overview.png)
+
 
 ---
 
@@ -102,4 +103,5 @@ Données fictives créées pour l'apprentissage.
 
 
 ```
+
 
