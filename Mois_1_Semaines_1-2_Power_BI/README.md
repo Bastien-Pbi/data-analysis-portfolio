@@ -3,109 +3,85 @@
 ## Contexte
 
 **Type** : Projet pédagogique - Formation Data Analyst BI  
-**Période** : Semaines 1 (Octobre 2025) 
-**Objectif** : Maîtriser les fondamentaux Power BI
-**Temps de réalisation** : ~15 heures (apprentissage + projet)
+**Période** : Semaines 2 (Novembre 2025) 
+**Objectif** : Maîtriser connexion Power BI ↔ PostgreSQL et modélisation relationnelle  
+**Temps de réalisation** : ~13 heures (apprentissage + projet)
 
-**Note** : Premier projet Power BI réalisé dans le cadre de ma formation. Focus sur les concepts fondamentaux.
-
----
-
-## Objectif du Projet
-
-Créer un dashboard interactif pour visualiser et analyser les données de production de 3 lignes industrielles (A, B, C) sur une période de 5 jours.
-
-**Questions business** :
-- Quelle ligne est la plus performante ?
-- Quel est le taux de rebut moyen ?
-- Comment évolue la production dans le temps ?
-- Y a-t-il des différences entre shifts (Matin/Soir) ?
+**Note** : Deuxième projet formation - Focus sur SQL avancé et relations entre tables.
 
 ---
 
-## Technologies Utilisées
+## Architecture Technique
+
+### Base de Données PostgreSQL
+
+**Table 1 : production** (Données quotidiennes)
+- 21 lignes (3 lignes × 7 jours)
+- Colonnes : id, ligne, date, produits, rebuts
+
+**Table 2 : lignes** (Référentiel)
+- 3 lignes (A, B, C)
+- Colonnes : id, nom, capacite_max, localisation, responsable
+
+**Relation** : `production.ligne` → `lignes.nom` (many-to-one)
 
 ### Power BI
-- **Power BI Desktop** : Création dashboards et visuels
-- **Power Query** : Transformation et nettoyage données
-- **DAX** : Calculs et mesures personnalisées
+
+**Import** :
+- Connexion PostgreSQL
+- Mode : Import
 
 ---
 
-## Données
+## KPIs et Métriques
 
-**Source** : Dataset fictif créé pour la formation
-
-**Structure** :
-- **15 lignes** de données
-- **Colonnes** : Ligne, Date, Produits, Rebuts, Shift, Responsable
-- **Période** : 14-18 janvier 2025
-- **3 lignes** de production : A, B, C
-
-**Volume** :
-- Production totale : 17 670 unités
-- Taux rebut moyen : 3,0%
+### Indicateurs Globaux
+- **Production totale** : 22 155 unités
+- **Capacité totale** : 4 000 unités/jour
+- **Taux d'utilisation global** : 88%
+- **Taux rebut moyen** : 3,0%
 
 ---
 
-## KPIs Suivis
+## Insights Business
 
-### Indicateurs Principaux
-- **Production Totale** 
-- **Production Moyenne**
-- **Total Rebuts**
-- **Taux Rebut Moyen**
-- **Nombre de jours**
+### Points Clés
 
-### Analyses
-- Production par ligne (A, B, C)
-- Évolution temporelle (tendances)
-- Répartition par shift (Matin/Soir)
+1. **Ligne C : Goulet d'étranglement**
+   - Taux utilisation : 92% (le plus élevé)
+   - Marge faible : 98 unités/jour
+   - **Risque** : Peu de flexibilité en cas de pic de demande
 
----
+2. **Ligne A & B : Sous-utilisées**
+   - Taux utilisation : < 86%
+   - Marge : 387 unités/jour
+   - **Opportunité** : Réallocation charge possible
 
-## Dashboard - Aperçu
+3. **Performance stable**
+   - Taux rebut constant ~3% (acceptable)
+   - Pas de variations anormales dans le temps
 
-### Page Unique : Vue d'Ensemble
+### Recommandations
 
-**Composants** :
-- 5 cartes KPI en haut (métriques clés)
-- Graphique barres : Production par ligne
-- Graphique lignes : Évolution temporelle
-- Graphique secteurs : Répartition par shift
-- 3 Slicers interactifs : Date, Ligne, Shift
-
-![Dashboard Screenshot](screenshots/dashboard_overview.png)
+➡️ **Rééquilibrer charge** : Transférer production de Ligne C vers Ligne A & B 
 
 ---
 
-## Structure du Repository
-```
-Dashboard_Production_S1S2/
-├── README.md (ce fichier)
-├── screenshots/
-│   └── dashboard_overview.png
-│   └── dashboard_focus ligne A.png
-│   └── dashboard_Shift Matin.png
-├── data/
-│   └── production_data.xlsx
-```
+## 📸 Aperçu Dashboard
 
-*Note : Le fichier .pbix (Power BI) n'est pas uploadé car trop volumineux pour GitHub*
+### Vue d'Ensemble
+![Dashboard Screenshot](Screenshots/dashboard_sql_overview.png)
+
 
 ---
 
-## Améliorations Futures Possibles
-
-Ce projet pourrait être enrichi avec :
-
-- [ ] Connexion directe Power BI ↔ PostgreSQL (au lieu d'Excel)
-- [ ] Relations entre plusieurs tables (lignes, responsables, shifts)
-- [ ] Mesures DAX avancées (Time Intelligence : YTD, MoM)
-- [ ] Page supplémentaire : Analyse détaillée par responsable
-- [ ] Tooltips personnalisés sur visuels
-- [ ] Thème Power BI personnalisé
-- [ ] Actualisation automatique données
+**Visualisation** :
+- 7 mesures DAX
+- 5 KPI cards
+- Graphiques barres groupées
+- Graphique évolution temporelle
+- 3 Jauges de taux d'utilisation
+- 2 slicers interactifs
 
 ---
 
