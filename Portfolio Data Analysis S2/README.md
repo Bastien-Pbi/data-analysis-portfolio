@@ -70,7 +70,7 @@
 ## 📸 Aperçu Dashboard
 
 ### Vue d'Ensemble
-![Dashboard Overview](Portfolio Data Analysis S2/Screenshots/dashboard_sql_overview.png)
+![Dashboard Screenshot](Screenshots/dashboard_overview.png)
 
 ---
 
@@ -102,3 +102,4 @@ Données fictives créées pour l'apprentissage.
 
 
 ```
+
