@@ -123,6 +123,6 @@ Données fictives créées pour l'apprentissage.
 
 ---
 
-*Projet réalisé en Octobre 2025 - Formation Data Analyst Mois 1*
+*Projet réalisé en Novembre 2025 - Formation Data Analyst Mois 1*
 
 ```
