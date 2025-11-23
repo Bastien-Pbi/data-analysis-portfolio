@@ -75,7 +75,7 @@ Créer un dashboard interactif pour visualiser et analyser les données de produ
 - Graphique secteurs : Répartition par shift
 - 3 Slicers interactifs : Date, Ligne, Shift
 
-![Dashboard Screenshot](screenshots/dashboard_sql.png)
+![Dashboard Screenshot](screenshots/dashboard_overview.png)
 
 ---
 
