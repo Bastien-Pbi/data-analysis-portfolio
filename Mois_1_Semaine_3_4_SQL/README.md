@@ -3,11 +3,11 @@
 ## Contexte
 
 **Type** : Projet pédagogique - Formation Data Analyst BI  
-**Période** : Semaines 2 (Novembre 2025) 
+**Période** : Semaines 3-4 (Décembre 2025) 
 **Objectif** : Maîtriser connexion Power BI ↔ PostgreSQL et modélisation relationnelle  
-**Temps de réalisation** : ~13 heures (apprentissage + projet)
+**Temps de réalisation** : ~12 heures (apprentissage + projet)
 
-**Note** : Deuxième projet formation - Focus sur SQL avancé et relations entre tables.
+**Note** : Troisième projet formation.
 
 ---
 
@@ -16,12 +16,12 @@
 ### Base de Données PostgreSQL
 
 **Table 1 : production** (Données quotidiennes)
-- 21 lignes (3 lignes × 7 jours)
-- Colonnes : id, ligne, date, produits, rebuts
+- 132 lignes
+- Colonnes : date, ligne_id, shift , quantite_produite, quantite_rebuts, temps_arret_min, responsable
 
 **Table 2 : lignes** (Référentiel)
-- 3 lignes (A, B, C)
-- Colonnes : id, nom, capacite_max, localisation, responsable
+- 3 testeurs (ICT, Takaya 1400, Takaya 2400)
+- Colonnes : nom_ligne, capacite_max_jour, type_testeur, localisation, annee_installation
 
 **Relation** : `production.ligne` → `lignes.nom` (many-to-one)
 
@@ -36,10 +36,10 @@
 ## KPIs et Métriques
 
 ### Indicateurs Globaux
-- **Production totale** : 22 155 unités
-- **Capacité totale** : 4 000 unités/jour
-- **Taux d'utilisation global** : 88%
-- **Taux rebut moyen** : 3,0%
+- **Production totale** : 59 263 unités
+- **Capacité totale** : 3 200 unités/jour
+- **Taux d'utilisation global** : 84,2%
+- **Taux rebut moyen** : 5,6%
 
 ---
 
@@ -47,40 +47,37 @@
 
 ### Points Clés
 
-1. **Ligne C : Goulet d'étranglement**
-   - Taux utilisation : 92% (le plus élevé)
-   - Marge faible : 98 unités/jour
-   - **Risque** : Peu de flexibilité en cas de pic de demande
+1. **Takaya 1400 : Taux de Rebut important**
+   - Taux de Rebut : 11,7% (le plus élevé)
+   - Performance faible : 82,2% de performance
+   - **Risque** : Augmentation des rebuts futur fortement possible
 
-2. **Ligne A & B : Sous-utilisées**
-   - Taux utilisation : < 86%
-   - Marge : 387 unités/jour
+2. **ICT & Takaya 2400 : Marge de production**
+   - Taux utilisation : < 90%
    - **Opportunité** : Réallocation charge possible
 
-3. **Performance stable**
-   - Taux rebut constant ~3% (acceptable)
-   - Pas de variations anormales dans le temps
 
 ### Recommandations
 
-➡️ **Rééquilibrer charge** : Transférer production de Ligne C vers Ligne A & B 
+➡️ **Rééquilibrer charge** : Transférer production testée sur Takaya 1400 vers ICT & Takaya 2400 
 
 ---
 
 ## 📸 Aperçu Dashboard
 
 ### Vue d'Ensemble
-![Dashboard Overview](Screenshots/dashboard_sql_overview.png)
+![Dashboard Screenshot](Screenshots/Dashboard_Overview.png)
 
 ---
 
 **Visualisation** :
-- 7 mesures DAX
-- 5 KPI cards
+- KPI cards
 - Graphiques barres groupées
-- Graphique évolution temporelle
-- 3 Jauges de taux d'utilisation
-- 2 slicers interactifs
+- Graphiques évolution temporelle
+- Jauges de taux d'utilisation
+- Slicers interactifs
+- Bouton d'aide pour utilisation du dashboard
+- Bouton de navigation entre pages
 
 ---
 
@@ -98,7 +95,6 @@ Données fictives créées pour l'apprentissage.
 
 ---
 
-*Projet réalisé en Novembre 2025 - Formation Data Analyst Mois 1*
-
+*Projet réalisé en Décembre 2025 - Formation Data Analyst Mois 1*
 
 ```
