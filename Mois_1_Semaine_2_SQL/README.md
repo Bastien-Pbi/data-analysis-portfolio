@@ -1,4 +1,4 @@
-# Dashboard Production Industrielle - Premier Projet Power BI
+# Dashboard Production Industrielle - Deuxième Projet Power BI
 
 ## Contexte
 
@@ -102,6 +102,7 @@ Données fictives créées pour l'apprentissage.
 *Projet réalisé en Novembre 2025 - Formation Data Analyst Mois 1*
 
 ```
+
 
 
 
