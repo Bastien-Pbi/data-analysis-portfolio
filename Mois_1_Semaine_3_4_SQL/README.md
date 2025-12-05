@@ -70,7 +70,7 @@
 ## 📸 Aperçu Dashboard
 
 ### Vue d'Ensemble
-![Dashboard Overview](screenshots/dashboard_sql_overview.png)
+![Dashboard Overview](Screenshots/dashboard_sql_overview.png)
 
 ---
 
@@ -99,5 +99,6 @@ Données fictives créées pour l'apprentissage.
 ---
 
 *Projet réalisé en Novembre 2025 - Formation Data Analyst Mois 1*
+
 
 ```
