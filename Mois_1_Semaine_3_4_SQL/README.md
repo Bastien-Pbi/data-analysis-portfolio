@@ -1,4 +1,4 @@
-# Dashboard Production Industrielle - Premier Projet Power BI
+# Dashboard Production Industrielle - Projet Final M1 Power BI
 
 ## Contexte
 
@@ -98,3 +98,4 @@ Données fictives créées pour l'apprentissage.
 *Projet réalisé en Décembre 2025 - Formation Data Analyst Mois 1*
 
 ```
+
